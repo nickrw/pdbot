@@ -1,0 +1,24 @@
+options:
+  log_output: false
+  dir_mode: normal
+  dir: "cinchize"
+servers:
+  mensearch:
+    server: irc.freenode.net
+    port: 6667
+    nick: pagerdutybot
+    user: pagerdutybot
+    realname: PagerDuty Bot
+    channels:
+      - "#oncallpeople"
+    plugins:
+      -
+        class: "PDBot::Plugin"
+        options:
+          pd_subdomain: "yourpagerdutysubdomain"
+          pd_api_key: "yourapikey"
+          pd_schedule_name: "yourschedulename"
+          poll_interval: 1800
+          announce_channel: "#oncallpeople"
+          nickmap:
+            "Person 1 Full Name": "funkyircnick"
